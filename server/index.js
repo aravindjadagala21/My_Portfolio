@@ -13,7 +13,9 @@ app.use(cors({
     credentials: true
   }));
 app.use(express.static('public'));
-
+app.get("/",(req,res)=>{
+  res.status(200).send({msg:"hello"})
+})
 app.get('/download-resume', (req, res) => {
   const filePath = path.join(__dirname, './public/resume.docx');
   res.download(filePath, 'Aravind_Resume.docx', (err) => {
