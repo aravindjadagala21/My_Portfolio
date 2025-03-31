@@ -44,7 +44,7 @@ const MainContent = () => {
 
 const handleDownload = async () => {
   try {
-    const res = await axios.get('api/download-resume', {
+    const res = await axios.get('/download-resume', {
       responseType: 'blob' 
     });
 
