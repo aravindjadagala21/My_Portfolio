@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
     res.status(200).send({ msg: "hello" });
 });
 
-app.get('/download-resume', (req, res) => {
+app.get('/api/download-resume', (req, res) => {
     const filePath = path.join(__dirname, 'public', 'resume.docx');
     res.download(filePath, 'Aravind_Resume.docx', (err) => {
         if (err) {
