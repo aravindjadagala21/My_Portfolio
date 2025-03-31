@@ -10,7 +10,7 @@ const app = express();
 const port = 3001;
 
 app.use(cors({
-    origin: 'https://my-portfolio-5tmv.vercel.app',
+    origin: 'https://my-portfolio-mh4a.vercel.app',
     credentials: true
 }));
 
