@@ -44,7 +44,7 @@ const MainContent = () => {
 
 const handleDownload = async () => {
   try {
-    const res = await axios.get('/download-resume', {
+    const res = await axios.get('https://my-portfolio-2-shk5.onrender.com/download-resume', {
       responseType: 'blob' 
     });
 
