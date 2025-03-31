@@ -2,7 +2,6 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import cors from 'cors'
-// Create __dirname equivalent for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -16,7 +15,7 @@ app.use(cors({
 app.use(express.static('public'));
 
 app.get('/download-resume', (req, res) => {
-  const filePath = path.join(__dirname, '../public/resume.docx');
+  const filePath = path.join(__dirname, './public/resume.docx');
   res.download(filePath, 'Aravind_Resume.docx', (err) => {
     if (err) {
       console.error('Error downloading file:', err);
