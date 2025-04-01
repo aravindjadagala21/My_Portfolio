@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0    w-full bg-gray-800/80 backdrop-blur-sm z-50 p-4">
       <div className="max-w-6xl h-10 mx-auto flex justify-between items-center">
-        <div className="text-xl font-bold">My Portfolio</div>
+        <div className="text-xl font-bold">Portfolio</div>
         <div className="flex gap-6 items-center">
           <a href="#projects" className="hover:text-blue-400 transition" 
          
