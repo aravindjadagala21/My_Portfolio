@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 function App() {
  
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900 m-0 text-white">
       <Navbar  />
       <MainContent />
       <Footer />

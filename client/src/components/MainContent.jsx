@@ -61,11 +61,11 @@ const handleDownload = async () => {
   }
 };
   return (
-    <main className="flex flex-col gap-5  m-0 px-4">
+    <main className="flex flex-col gap-5  m-0 sm:px-4 px-1">
       
       <section id="home" 
       className=" mt-20 
-     shadow-amber-50 shadow
+     shadow-amber-50 sm:shadow-md  shadow-xs
       min-h-[calc(100vh-90px)]  flex-col 
       flex items-center  justify-between
       gap-10 lg:flex-row md:justify-evenly 
@@ -129,7 +129,7 @@ const handleDownload = async () => {
               />
             </div>
           </div>
-          <div className="  sm:p-20 p-15  text-white">
+          <div className="  sm:p-20 p-5  text-white">
             <p className="text-lg  dark:text-gray-300 mb-4">
               I'm a passionate MERN stack developer with a strong foundation in JavaScript and web development. I love building applications that solve real-world problems.
             </p>
