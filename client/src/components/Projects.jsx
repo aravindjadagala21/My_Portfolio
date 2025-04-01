@@ -33,9 +33,10 @@ export default function Project() {
     return (
       <section id="projects" 
       className="
-      
+      min-h-screen
+      flex justify-center items-center
       ">
-        <div className="max-w-8xl min-h-screen py-4 mx-auto mt-0 px-4 sm:px-6 lg:px-8
+        <div className="max-w-8xl h-full  py-4 mx-auto mt-0 px-4 sm:px-6 lg:px-8
          shadow-amber-50 sm:shadow-md  shadow-xs">
           <h2 className="text-3xl font-bold text-center text-white mb-12">My Projects</h2>
           <div className="grid gap-8
