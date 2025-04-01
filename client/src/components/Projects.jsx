@@ -26,7 +26,7 @@ export default function Project() {
         technologies: ['Html', 'css','javascript','express','Mysql'],
         image: eduplay,
         
-        codeLink: 'https://github.com/aravindjadagala21/contact-app'
+        codeLink: 'https://github.com/aravindjadagala21/eduplay'
       },
     ];
   

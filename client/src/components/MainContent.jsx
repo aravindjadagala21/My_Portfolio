@@ -116,9 +116,9 @@ const handleDownload = async () => {
       <section id="about" className="    
       min-h-[calc(100vh-90px)] shadow-amber-50 shadow
       flex justify-center items-center
-         dark:bg-gray-800">
+         ">
       <div className="max-w-6xl mx-auto ">
-        <h2 className="text-5xl text-shadown-blue font-bold text-center text-blue-500 dark:text-white mb-12">About Me</h2>
+        <h2 className="text-5xl text-shadown-blue font-bold text-center text-blue-500  mb-12">About Me</h2>
         <div className="flex flex-col lg:flex-row lg:gap-3 justify-between items-center">
           <div className=" flex justify-center">
             <div className="size-60 lg:size-80 shrink-0 rounded-full overflow-hidden border-4 border-blue-500">
@@ -130,13 +130,13 @@ const handleDownload = async () => {
             </div>
           </div>
           <div className="  sm:p-20 p-5  text-white">
-            <p className="text-lg  dark:text-gray-300 mb-4">
+            <p className="text-lg   mb-4">
               I'm a passionate MERN stack developer with a strong foundation in JavaScript and web development. I love building applications that solve real-world problems.
             </p>
-            <p className="text-lg  dark:text-gray-300 mb-4">
+            <p className="text-lg  mb-4">
               My journey into web development started when I discovered my interest in creating things that people can interact with. Since then, I've been constantly learning and improving my skills.
             </p>
-            <p className="text-lg  dark:text-gray-300 mb-6">
+            <p className="text-lg   mb-6">
               When I'm not coding, you can find me reading tech blogs, contributing to open-source projects, or exploring new technologies.
             </p>
             <div className="flex space-x-4">
