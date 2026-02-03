@@ -2,15 +2,13 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaCode } from 'react-icons/fa';
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-[100] border-b border-gray-800">
+    <nav className="w-full bg-gray-900/90 backdrop-blur-md z-[100] border-b border-gray-800">
       <div className="max-w-7xl h-16 mx-auto px-4 flex justify-between items-center">
         
-        {/* Logo / Brand */}
         <div className="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 tracking-tighter cursor-pointer">
           ARAVIND<span className="text-white">.</span>
         </div>
 
-        {/* Navigation Links */}
         <div className="hidden md:flex gap-8 items-center font-medium text-gray-300">
           <a href="#home" className="hover:text-blue-400 transition-colors">Home</a>
           <a href="#about" className="hover:text-blue-400 transition-colors">About</a>
@@ -18,7 +16,6 @@ const Navbar = () => {
           <a href="#projects" className="hover:text-blue-400 transition-colors">Projects</a>
         </div>
 
-        {/* Social Icons */}
         <div className="flex gap-5 items-center">
           <a 
             href="https://github.com/aravindjadagala21" 
@@ -45,7 +42,6 @@ const Navbar = () => {
             <FaCode size={22} />
           </a>
           
-          {/* Contact Button */}
           <a 
             href="mailto:aravindjadagala21@gmail.com"
             className="hidden sm:block ml-2 bg-blue-600/10 border border-blue-500/50 text-blue-400 px-4 py-1.5 rounded-full text-sm font-bold hover:bg-blue-600 hover:text-white transition-all"

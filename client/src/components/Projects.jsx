@@ -17,15 +17,16 @@ export default function Project() {
       description: 'A real-time P2P drawing platform using WebRTC. Features multi-user synchronization, custom drawing tools, and board management logic.',
       technologies: ['React', 'WebRTC', 'Socket.io', 'Tailwind'],
       image:whiteboardImg,
-      codeLink: 'https://github.com/aravindjadagala21',
-      featured: true
+      codeLink: 'https://github.com/aravindjadagala21/Whiteboard_P2P_webRTC_PWA',
+      featured: true,
+     demoLink:" https://whiteboard-p2-p-web-rtc-pwa.vercel.app/"
     },
     {
   title: 'TicBook',
   description: 'A comprehensive event discovery and ticket management ecosystem. Engineered a seamless flow from event creation to instant ticket generation with unique QR codes and simulated payment processing.',
   technologies: ['Next.js', 'MongoDB', 'Tailwind CSS', 'JWT (Refresh/Access)', 'SSR Middleware'],
   image:Ticbook, 
-  codeLink: 'https://github.com/aravindjadagala21/TicBook',
+  codeLink: 'https://github.com/aravindjadagala21/Ticbook_new',
   featured: true,
   highlights: [
     "Implemented secure JWT authentication with SSR-compatible Refresh/Access tokens.",

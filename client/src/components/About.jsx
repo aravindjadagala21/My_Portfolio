@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-
+import img from '../assets/img.png'
 export default function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -50,27 +50,56 @@ export default function About() {
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
         >
-          {/* Visual Block - Illustration/Logo */}
-          <motion.div 
-            className="lg:w-1/2 flex justify-center"
-            variants={item}
-          >
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-              <div className="relative size-64 lg:size-96 bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 shadow-2xl">
-                <motion.img 
-                  src="https://illustrations.popsy.co/white/data-analysis.svg" 
-                  alt="Developer Illustration" 
-                  className="w-full h-full object-contain p-4"
-                  initial={{ scale: 1.1 }}
-                  animate={isInView ? { scale: 1 } : {}}
-                  transition={{ duration: 1 }}
-                />
-              </div>
-            </div>
-          </motion.div>
+         <motion.div 
+  className="lg:w-1/2 flex justify-center"
+  variants={item}
+>
+  <div className="relative group">
+   <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-emerald-600/20 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
 
-          {/* Text Content */}
+  <div className="relative size-72 lg:size-[450px] 
+    bg-gray-900/40 backdrop-blur-sm 
+    rounded-3xl overflow-hidden 
+    border border-white/10 
+    shadow-[0_0_50px_-12px_rgba(0,0,0,0.5)] 
+    flex items-center justify-center">
+
+    {/* subtle white center glow */}
+    <div className="absolute inset-0 
+      bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.12),transparent_60%)]">
+      <motion.img 
+        src={img}
+        alt="Developer Wireframe" 
+        className="relative z-10 w-[85%] h-[85%] object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+        initial={{ y: 20, opacity: 0 }}
+        animate={isInView ? { 
+          y: [0, -15, 0], 
+          opacity: 1 
+        } : {}}
+        transition={{ 
+          y: {
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          },
+          opacity: { duration: 1 }
+        }}
+      />
+</div>
+
+    {/* grid */}
+    <div className="absolute inset-0 opacity-10 
+      bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),
+      linear-gradient(to_bottom,#80808012_1px,transparent_1px)] 
+      bg-[size:24px_24px]">
+    </div>
+
+      <div className="absolute top-4 left-4 size-4 border-t-2 border-l-2 border-blue-500/30 rounded-tl-lg"></div>
+      <div className="absolute bottom-4 right-4 size-4 border-b-2 border-r-2 border-emerald-500/30 rounded-br-lg"></div>
+    </div>
+  </div>
+</motion.div>
+
           <motion.div 
             className="lg:w-1/2 text-gray-300"
             variants={container}
