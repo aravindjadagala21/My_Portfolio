@@ -1,82 +1,96 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import eduplay from '../assets/eduplay.png'
 import authuser from '../assets/authUser.png';
 import contact_app from '../assets/contact-app.png';
-import eduplay from '../assets/eduplay.png';
-
+import whiteboardImg from '../assets/whiteboard.png'; 
+import notesImg from '../assets/notes-app.png';
+import Ticbook from '../assets/Ticbook.png'
 export default function Project() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const projects = [
     {
-      title: 'AuthUser',
-      description: 'Built a secure login/register app using React and Node.js. Integrated Google & Local auth via Passport.js, with session handling and user profile management.',
-      technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
-      image: authuser,
-      demoLink: 'https://your-ecommerce-demo.com',
-      codeLink: 'https://github.com/aravindjadagala21/AuthUser'
+      title: 'Collaborative Whiteboard',
+      description: 'A real-time P2P drawing platform using WebRTC. Features multi-user synchronization, custom drawing tools, and board management logic.',
+      technologies: ['React', 'WebRTC', 'Socket.io', 'Tailwind'],
+      image:whiteboardImg,
+      codeLink: 'https://github.com/aravindjadagala21',
+      featured: true
     },
     {
-      title: 'Contact Management App',
-      description: 'Built a CRUD contact manager with React Hooks and JSON Server. Users can add/edit/delete contacts with a clean UI',
-      technologies: ['React', 'Tailwind', 'JSON Server'],
-      image: contact_app,
-      codeLink: 'https://github.com/aravindjadagala21/contact-app'
+  title: 'TicBook',
+  description: 'A comprehensive event discovery and ticket management ecosystem. Engineered a seamless flow from event creation to instant ticket generation with unique QR codes and simulated payment processing.',
+  technologies: ['Next.js', 'MongoDB', 'Tailwind CSS', 'JWT (Refresh/Access)', 'SSR Middleware'],
+  image:Ticbook, 
+  codeLink: 'https://github.com/aravindjadagala21/TicBook',
+  featured: true,
+  highlights: [
+    "Implemented secure JWT authentication with SSR-compatible Refresh/Access tokens.",
+    "Built a modular Stepper Component architecture for complex event creation forms.",
+    "Integrated automated QR code generation for instant digital ticketing."
+  ]
+},
+    {
+      title: 'Full-Stack Notes App',
+      description: 'Secure note-taking application with JWT auth. Integrated TanStack Query for state management and Nodemailer for automated notifications.',
+      technologies: ['Next.js', 'MongoDB', 'TanStack Query', 'Mongoose'],
+      image:notesImg,
+      codeLink: 'https://github.com/aravindjadagala21/Notes_fullstack',
+      featured: true
+    },
+    {
+      title: 'AuthUser',
+      description: 'Secure identity management system with Passport.js. Supports both Google OAuth and local authentication with session handling.',
+      technologies: ['Node.js', 'Express', 'Passport.js', 'MongoDB'],
+      image: authuser,
+      codeLink: 'https://github.com/aravindjadagala21/AuthUser',
+      featured: false
     },
     {
       title: 'Eduplay',
-      description: 'Developed a kid-friendly educational app with video lessons and interactive games. Created login/registration system and responsive UI',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Express', 'MySQL'],
+      description: 'Educational platform for kids featuring interactive video lessons and games with a MySQL-backed registration system.',
+      technologies: ['JavaScript', 'MySQL', 'Express'],
       image: eduplay,
-      codeLink: 'https://github.com/aravindjadagala21/eduplay'
-    },
+      codeLink: 'https://github.com/aravindjadagala21/eduplay',
+      featured: false
+    }
   ];
 
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      }
+      transition: { staggerChildren: 0.15 }
     }
   };
 
   const item = {
-    hidden: { opacity: 0, y: 50, scale: 0.8 },
+    hidden: { opacity: 0, y: 30 },
     show: { 
       opacity: 1, 
       y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 10,
-        duration: 0.8
-      }
+      transition: { type: "spring", stiffness: 100 }
     }
   };
 
   return (
-    <section 
-      id="projects" 
-      ref={ref}
-      className="min-h-screen flex justify-center items-center 
-      bg-gradient-to-br from-gray-900 to-gray-800
-      shadow-amber-50 sm:shadow-md  shadow-xs
-       py-12"
-    >
-      <div className="max-w-7xl w-full py-4 mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2 
-          className="text-4xl font-bold text-center text-white mb-16"
+    <section id="projects" ref={ref} className="py-24 bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div 
+          className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
         >
-          My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Projects</span>
-        </motion.h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Work</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            A collection of full-stack applications and real-time systems built with modern web standards.
+          </p>
+        </motion.div>
 
         <motion.div 
           className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
@@ -87,54 +101,59 @@ export default function Project() {
           {projects.map((project, index) => (
             <motion.div 
               key={index} 
-              className="bg-gray-800/70 hover:bg-gray-700/80 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-700"
               variants={item}
-              whileHover={{ y: -10, scale: 1.02 }}
+              className={`group relative bg-gray-800/40 backdrop-blur-sm rounded-2xl overflow-hidden border ${project.featured ? 'border-blue-500/50' : 'border-gray-700'} hover:border-blue-400 transition-all duration-300`}
             >
-              <motion.div 
-                className="overflow-hidden h-48"
-                initial={{ scale: 1.1 }}
-                animate={isInView ? { scale: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-              >
+              <div className="h-52 overflow-hidden relative">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-              </motion.div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
+              </div>
+
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {project.technologies.map((tech, i) => (
-                    <span 
-                      key={i} 
-                      className="px-3 py-1 bg-gray-700 text-blue-300 text-xs font-medium rounded-full"
-                    >
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  {project.featured && (
+                    <span className="text-[10px] uppercase tracking-widest bg-blue-500/20 text-blue-400 px-2 py-1 rounded">New</span>
+                  )}
+                </div>
+                
+                <p className="text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.slice(0, 4).map((tech, i) => (
+                    <span key={i} className="text-[11px] font-semibold text-gray-300 bg-gray-700/50 px-2 py-1 rounded">
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-3">
+
+                <div className="flex gap-4">
+                  <a 
+                    href={project.codeLink} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="flex items-center gap-2 text-sm font-bold text-white hover:text-blue-400 transition-colors"
+                  >
+                    <FaGithub /> GitHub
+                  </a>
                   {project.demoLink && (
                     <a 
                       href={project.demoLink} 
                       target="_blank" 
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:opacity-90 transition duration-300 text-sm font-medium"
+                      rel="noreferrer"
+                      className="flex items-center gap-2 text-sm font-bold text-blue-400 hover:text-blue-300 transition-colors"
                     >
-                      Live Demo
+                      <FaExternalLinkAlt size={12} /> Live Demo
                     </a>
                   )}
-                  <a 
-                    href={project.codeLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition duration-300 text-sm font-medium"
-                  >
-                    View Code
-                  </a>
                 </div>
               </div>
             </motion.div>

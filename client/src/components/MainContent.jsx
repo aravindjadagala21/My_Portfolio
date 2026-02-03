@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
-import axios from 'axios'
-import profilepic from '../assets/profilepic.jpg'
-import intropic from '../assets/intropic.jpg'
-import Skills from './Skills'
+import { FaGithub, FaLinkedin, FaCode } from 'react-icons/fa'; // Install react-icons
+import Skills from './Skills';
 import Project from './Projects';
-import Footer from './Footer';
 import About from './About';
+
 const MainContent = () => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -21,85 +19,65 @@ const MainContent = () => {
     const hiddenElements = document.querySelectorAll('.fade-in');
     hiddenElements.forEach(el => observer.observe(el));
 
-    return () => {
-      hiddenElements.forEach(el => observer.unobserve(el));
-    };
+    return () => hiddenElements.forEach(el => observer.unobserve(el));
   }, []);
 
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce site with React, Node.js, and MongoDB",
-      technologies: ["React", "Node.js", "MongoDB", "Redux"],
-      link: "#"
-    },
-    {
-      title: "Task Management App",
-      description: "Real-time task management application with authentication",
-      technologies: ["React", "Express", "MongoDB", "JWT"],
-      link: "#"
-    }
-  ];
-
   return (
-    <main className="flex flex-col gap-5  m-0 sm:px-4 px-1">
-      
-      <section id="home" 
-      className=" mt-20 
-    
-      bg-gradient-to-br from-gray-900 to-gray-800
-      shadow-amber-50 sm:shadow-md  shadow-xs
-      min-h-[calc(100vh-90px)]  flex-col 
-      flex items-center  justify-between
-      gap-10 lg:flex-row md:justify-evenly 
-      ">
-        <div 
-        className="
-        text-center fade-in  translate-y-10 
-        transition-transform duration-700
-        mb-4  p-4 lg:text-start 
+    <div className="relative min-h-screen bg-gray-900 text-white">
+      {/* --- Floating Icons --- */}
+      <div className="fixed left-6 bottom-10 z-50 flex flex-col gap-6 text-2xl animate-bounce-slow">
+        <a href="https://github.com/aravindjadagala21" target="_blank" className="hover:text-blue-400 transition-colors"><FaGithub /></a>
+        <a href="#" target="_blank" className="hover:text-blue-400 transition-colors"><FaLinkedin /></a>
+        <a href="#" target="_blank" className="hover:text-blue-400 transition-colors"><FaCode /></a> {/* LeetCode */}
+      </div>
 
-        ">
-          <h1 className="text-6xl font-bold text-white mb-6">
-            Hi, I'm <span className="text-blue-400">Aravind</span>
-          </h1>
-          <h2 className="text-3xl text-gray-300 mb-8">
-            MERN Stack Developer
-          </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
-            I build exceptional digital experiences with modern web technologies.
-          </p>
-          <div>
-            <a 
-              href="#projects" 
-              className="sm:inline block border m-0 mb-2 sm:mb-0  bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg sm:mr-4 transition"
-            >
-              View My Work
-            </a>
-            <a 
-              href="#footer" 
-              className= "sm:inline block border border-blue-400 text-blue-400 hover:bg-blue-900/30 px-8 py-3 rounded-lg transition"
-            >
-              Contact Me
-            </a>
+      <main className="flex flex-col gap-10 sm:px-4 px-2 max-w-7xl mx-auto">
+        
+        {/* --- Hero Section --- */}
+        <section id="home" className="mt-20 min-h-[80vh] flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div className="text-center lg:text-start fade-in flex-1">
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+              Hi, I'm Aravind
+            </h1>
+            <h2 className="text-2xl md:text-3xl text-gray-300 mb-6 font-mono">
+              Full Stack Developer & System Architect
+            </h2>
+            <p className="text-lg text-gray-400 max-w-xl mb-10 leading-relaxed">
+              Specializing in building real-time collaborative tools and scalable MERN applications. 
+              Currently focused on WebRTC and hyper-local logistics systems.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#projects" className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105">
+                View My Work
+              </a>
+              <a href="#footer" className="border border-blue-400 text-blue-400 hover:bg-blue-400/10 px-8 py-3 rounded-full font-bold transition-all">
+                Contact Me
+              </a>
+            </div>
           </div>
-        </div>
-        <div className='lg:size-100 sm:size-90 size-70 overflow-hidden 
-         bg-red-100 rounded-full  shrink-0 my-10
-         hover:shadow-[0_0_20px_10px_#6BA3FF] shadow-[0_0_15px_5px_#6BA3FF] text-cyan-300 
-         '>
-              <img src={intropic} alt="profile" 
-              className='w-full object-center' />
-        </div>
 
-      </section>
+          {/* --- Logo/Cartoon Placeholder --- */}
+          <div className="flex-1 flex justify-center">
+            <div className="relative w-64 h-64 md:w-96 md:h-96">
+                {/* Floating Glow Effect */}
+              <div className="absolute inset-0 bg-blue-500 rounded-full blur-[80px] opacity-20 animate-pulse"></div>
+              <div className="relative w-full h-full bg-gray-800 rounded-3xl border border-gray-700 flex items-center justify-center overflow-hidden shadow-2xl">
+                {/* You can replace this <img> with a Lottie animation or a Dev SVG */}
+                <img 
+                  src="https://illustrations.popsy.co/white/web-design.svg" 
+                  alt="Developer Illustration" 
+                  className="w-4/5 h-4/5 object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
-
-    <About/>
-    <Skills/>
-     <Project/>
-
-    </main>
+        <About />
+        <Skills />
+        <Project />
+      </main>
+    </div>
   );
 };
 
