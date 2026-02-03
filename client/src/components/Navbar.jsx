@@ -34,7 +34,7 @@ const Navbar = () => {
             <FaLinkedin size={22} />
           </a>
           <a 
-            href="https://leetcode.com/u/aravindjadagala21/" 
+            href="https://leetcode.com/u/jadagala_aravind/" 
             target="_blank" 
             rel="noreferrer"
             className="text-gray-400 hover:text-[#ffa116] transition-all transform hover:scale-110"
