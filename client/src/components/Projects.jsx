@@ -34,6 +34,15 @@ export default function Project() {
     "Integrated automated QR code generation for instant digital ticketing."
   ]
 },
+{
+  title: 'Notes',
+  description: 'An intelligent full-stack note management system featuring JWT-based authentication, debounced regex search, and server-side rate limiting to prevent spam.',
+  technologies: ['Next.js 15', 'TypeScript', 'MongoDB', 'Mongoose', 'Tailwind CSS', 'JWT'],
+  image: notes_project, 
+  demoLink:'https://notes-web-application-orcin.vercel.app/',
+  codeLink: 'https://github.com/aravindjadagala21/Notes_web_application',
+  featured: true
+},
     {
       title: 'Full-Stack Notes App',
       description: 'Secure note-taking application with JWT auth. Integrated TanStack Query for state management and Nodemailer for automated notifications.',
