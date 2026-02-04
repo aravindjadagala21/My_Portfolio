@@ -7,6 +7,7 @@ import contact_app from '../assets/contact-app.png';
 import whiteboardImg from '../assets/whiteboard.png'; 
 import notesImg from '../assets/notes-app.png';
 import Ticbook from '../assets/Ticbook.png'
+import note from '../assets/note.png'
 export default function Project() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -38,7 +39,7 @@ export default function Project() {
   title: 'Notes',
   description: 'An intelligent full-stack note management system featuring JWT-based authentication, debounced regex search, and server-side rate limiting to prevent spam.',
   technologies: ['Next.js 15', 'TypeScript', 'MongoDB', 'Mongoose', 'Tailwind CSS', 'JWT'],
-  image: notes_project, 
+  image: note, 
   demoLink:'https://notes-web-application-orcin.vercel.app/',
   codeLink: 'https://github.com/aravindjadagala21/Notes_web_application',
   featured: true
