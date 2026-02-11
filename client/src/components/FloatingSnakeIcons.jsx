@@ -3,10 +3,10 @@ import { motion, useAnimation } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaCode } from 'react-icons/fa';
 
 const ICONS = [
-  { id: 'linkedin', icon: <FaLinkedin />, color: '#0077b5', link: 'https://linkedin.com/in/aravind-jadagala-240988317/' },
-  { id: 'github', icon: <FaGithub />, color: '#ffffff', link: 'https://github.com/aravindjadagala21' },
-  { id: 'leetcode', icon: <FaCode />, color: '#ffa116', link: 'https://leetcode.com/u/jadagala_aravind/' },
-  { id: 'email', icon: <FaEnvelope />, color: '#ea4335', link: 'mailto:aravindjadagala21@gmail.com' },
+  { id: 'linkedin', icon: <FaLinkedin className='h-3 w-3 md:h-7 md:w-7' />, color: '#0077b5', link: 'https://linkedin.com/in/aravind-jadagala-240988317/' },
+  { id: 'github', icon: <FaGithub className='h-3 w-3 md:h-7 md:w-7' />, color: '#ffffff', link: 'https://github.com/aravindjadagala21' },
+  { id: 'leetcode', icon: <FaCode className='h-3 w-3 md:h-7 md:w-7' />, color: '#ffa116', link: 'https://leetcode.com/u/jadagala_aravind/' },
+  { id: 'email', icon: <FaEnvelope className='h-3 w-3 md:h-7 md:w-7' />, color: '#ea4335', link: 'mailto:aravindjadagala21@gmail.com' },
 ];
 
 export default function FloatingSnakeIcons() {
@@ -83,7 +83,7 @@ export default function FloatingSnakeIcons() {
           rel="noreferrer"
           onMouseEnter={handleInteraction}
           onTouchStart={handleInteraction}
-          className="absolute pointer-events-auto cursor-pointer p-4 rounded-2xl bg-gray-900/80 backdrop-blur-xl border border-white/10 shadow-xl flex items-center justify-center text-2xl"
+          className="absolute pointer-events-auto cursor-pointer p-2  rounded-2xl bg-gray-900/80 backdrop-blur-xl border border-white/10 shadow-xl flex items-center justify-center text-2xl"
           style={{ 
             color: item.color,
             boxShadow: `0 0 15px ${item.color}22` 
